@@ -1,0 +1,4 @@
+Flask==2.2.5
+mysql-connector-python==8.0.33
+Flask-Mail==0.9.1
+python-dotenv==0.21.1

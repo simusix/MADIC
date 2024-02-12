@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADIC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/FreeSans.ttf">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Function to handle sorting when header is clicked
+            $('th').click(function(){
+                var table = $(this).parents('table').eq(0);
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+                this.asc = !this.asc;
+                if (!this.asc){rows = rows.reverse();}
+                for (var i = 0; i < rows.length; i++){table.append(rows[i]);}
+            });
+            // Function to compare values for sorting
+            function comparer(index) {
+                return function(a, b) {
+                    var valA = getCellValue(a, index), valB = getCellValue(b, index);
+                    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+                };
+            }
+            // Function to get cell value for sorting
+            function getCellValue(row, index){ return $(row).children('td').eq(index).text(); }
+        });
+    </script>
+</head>
+<body>
+    <header id="main-header">
+        <h1 id="header-title">MADIC</h1>
+        <div id="header-links" class="hidden">
+            <a href="/">PREKLADAČ</a>
+            <a href="/dictionary">SLOVNÍK</a>
+            <a href="/contact">KONTAKT</a>
+            <a href="/info">INFO</a>
+        </div>
+    </header>
+    
+    <main id="dictionary">
+
+        <div class="dictionary-container">
+            <table>
+                
+                <tr>
+                    <th>SK</th>
+                    <th>EN</th>
+                    <th>SK symbol</th>
+                    <th>EN symbol</th>
+                    <th>Popis / Description</th>
+                </tr>
+                {% for item in data %}
+                <tr>
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                    <td>{{item[4]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+
+    </main>
+    
+
+</body>
+</html>
