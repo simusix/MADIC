@@ -1,0 +1,327 @@
+
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('/static/FreeSans.ttf') format('truetype');
+}
+
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    height: 100%;
+    font-family: 'FreeSans', Arial, sans-serif;/*font-family: Arial, sans-serif;*/
+    background-color: #121212;
+}
+
+.info {
+    color: #fff;
+}
+
+
+header {
+    background-color: #673AB7;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top:2em;
+    padding: 20px;
+    background-color: #222222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+label {
+    margin-right: 10px;
+    color: #fff;
+}
+/* General form */
+input textarea{
+    font-size: 16px;
+    color: #fff;
+}
+/* For prekladac form */
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color:#222222;
+    border-radius: 5px;
+}
+form#search-form{
+    display: flex;
+    align-items: center;
+}
+/* For contact form */
+form#contact-form *{
+    font-family: 'FreeSans', Arial, sans-serif;
+    color: #fff;
+}
+
+input[type=text], select ,textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: #fff;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: transparent;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #673AB7;
+  }
+
+  input[type=email] {
+    background-color: #222222;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  select, textarea{
+    background-color: #222222;
+    color: #fff;
+  }
+
+  
+
+button {
+    background-color: #673AB7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+button:hover {
+    background-color: #673AB7;
+}
+
+.translation {
+    font-size: 18px;
+}
+/* Dictionary stuff */
+table {
+    color: #fff;
+}
+
+th {
+    user-select: none;
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+.dictionary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dictionary {
+    max-width: 1000px; /* Set the desired max-width for the "dictionary" element */
+}
+
+/* Search stuff */
+
+#search-form {
+    justify-content: center;
+}
+
+#translate {
+    position:fixed;
+    bottom:0;
+    margin-bottom: 4em;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  margin-left:15px;
+}
+
+.clickable:hover{
+    cursor: pointer;
+}
+
+
+#toggler:hover {
+    cursor:cell;
+}
+
+#suggestions {
+    color:#fff;
+
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.suggestions:hover {
+    cursor: pointer;
+}
+
+
+.material-symbols-outlined{
+    transition: 1s;
+    color: #fff;
+}
+.material-symbols-outlined:hover {
+    cursor: pointer;
+    color:#9052fa;
+    transform: rotate(90deg);
+}
+
+
+/* For the switch button */
+
+.language-switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto; 
+    background-color: #673AB7;
+    border-radius: 50px;
+    width: 150px; 
+    position: relative;
+    overflow: hidden;
+    height: 40px; 
+    user-select: none;
+}
+
+#language-switch {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 100%; 
+}
+
+.flag {
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%;
+    position: absolute; 
+    transition: left 1s ease;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+#flag-left {
+    left: 5px;
+    z-index: 1;
+}
+
+#flag-right {
+    left: calc(100% - 35px);
+    z-index: 0;
+}
+
+
+#switch-text {
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+    top: 50%; 
+    transform: translateY(-50%); 
+    pointer-events: none; 
+}
+
+
+/* Menu stuff */
+#main-header {
+  
+    position: relative; /* Needed for absolute positioning of children */
+}
+
+#header-title {
+    transition: opacity 0.5s ease; /* Transition for the fade effect */
+}
+
+#header-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transition for the fade effect */
+    pointer-events: none; /* Disable click events when links are hidden */
+}
+
+#header-links a {
+    color: #fff; /* Example link color */
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Example font size */
+}
+
+/* When the header is hovered, fade out the title and fade in the links */
+#main-header:hover #header-title {
+    opacity: 0;
+}
+
+#main-header:hover #header-links {
+    opacity: 1;
+    pointer-events: auto; /* Enable click events when links are visible */
+}
+
+/* Hide the links by default */
+.hidden {
+    display: none;
+}
+
+
+/* Flashes */
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #fff;
+    background-color: #673AB7;
+}
+
+.alert-error {
+    color: #fff;
+    background-color: #ff4545;
+}
