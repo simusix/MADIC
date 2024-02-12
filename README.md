@@ -12,7 +12,7 @@ python -m venv .venv
 ```
 Activate virtual environment
 
-```py
+```bash
 ".venv\Scripts\activate"
 ```
 Start flask app
