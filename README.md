@@ -1,5 +1,7 @@
+# Android application
+Download ```MaDic-0.1-arm64-v8a_armeabi-v7a-debug (19).apk```
 
-# Start
+# Web application
 ## Environment variables
 Set up environment variables in ```.env``` file.
 See ```.example.env``` file for required variables.
